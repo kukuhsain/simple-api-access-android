@@ -15,5 +15,4 @@ public class Image {
     @Expose
     public String thumb;
 
-
 }
