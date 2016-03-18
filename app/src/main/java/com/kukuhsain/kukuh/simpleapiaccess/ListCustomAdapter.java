@@ -1,11 +1,15 @@
 package com.kukuhsain.kukuh.simpleapiaccess;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 /**
  * Created by kukuh on 18/03/16.
@@ -21,23 +25,22 @@ public class ListCustomAdapter extends ArrayAdapter<PhoneList> {
 
         PhoneList list = getItem(position);
 
-//        final ImageView weatherIcon = (ImageView) customView.findViewById(R.id.phone_icon);
+        final ImageView phoneIcon = (ImageView) customView.findViewById(R.id.phone_icon);
         TextView phoneName = (TextView) customView.findViewById(R.id.phone_name);
         TextView phonePrice = (TextView) customView.findViewById(R.id.phone_price);
 
         phoneName.setText(list.name);
         phonePrice.setText("" + list.price);
-//        temperature.setText("Temperature " + list.temp.min + "C - " + list.temp.max + "C");
 
-        /*String image_url = "http://api.openweathermap.org/img/w/" + list.weather.get(0).icon + ".png";
-        Log.d("url", image_url);*/
+        String image_url = list.images.get(0).thumb;
+        Log.d("url", image_url);
 
-        /*Glide.with(getContext())
+        Glide.with(getContext())
                 .load(image_url)
                 .centerCrop()
 //                .placeholder(R.drawable.)
                 .crossFade()
-                .into(weatherIcon);*/
+                .into(phoneIcon);
 
         return customView;
     }
