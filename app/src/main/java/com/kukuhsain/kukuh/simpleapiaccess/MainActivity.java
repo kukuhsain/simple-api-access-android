@@ -50,9 +50,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d("email", stringEmail);
         Log.d("password", stringPassword);
 
-        if (stringEmail.equals("e@qiscus.com") && stringPassword.equals("1234abcd")) {
-            Toast.makeText(MainActivity.this, "Please wait", Toast.LENGTH_LONG).show();
-            goToNext();
+        if (stringEmail.equals("") && stringPassword.equals("")) {
+            Toast.makeText(MainActivity.this, "Please wait", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, ListActivity.class);
+            startActivity(intent);
+//            goToNext();
         } else {
             Toast.makeText(MainActivity.this, "Wrong email and/or password", Toast.LENGTH_SHORT).show();
         }

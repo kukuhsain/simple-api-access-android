@@ -1,15 +1,12 @@
 package com.kukuhsain.kukuh.simpleapiaccess;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 /**
  * Created by kukuh on 18/03/16.
@@ -32,7 +29,7 @@ public class ListCustomAdapter extends ArrayAdapter<PhoneList> {
         phoneName.setText(list.name);
         phonePrice.setText("" + list.price);
 
-        String image_url = list.images.get(0).thumb;
+        /*String image_url = list.images.get(0).thumb;
         Log.d("url", image_url);
 
         Glide.with(getContext())
@@ -40,7 +37,7 @@ public class ListCustomAdapter extends ArrayAdapter<PhoneList> {
                 .centerCrop()
 //                .placeholder(R.drawable.)
                 .crossFade()
-                .into(phoneIcon);
+                .into(phoneIcon);*/
 
         return customView;
     }
