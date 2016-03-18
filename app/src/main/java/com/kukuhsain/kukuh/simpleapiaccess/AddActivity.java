@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -59,6 +60,8 @@ public class AddActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<PhoneList> call, Response<PhoneList> response) {
                                 Log.d("success", response.message());
+                                Toast.makeText(AddActivity.this, "Please wait", Toast.LENGTH_SHORT).show();
+                                finish();
                             }
 
                             @Override
@@ -67,7 +70,7 @@ public class AddActivity extends AppCompatActivity {
                             }
                         }
         );
-        finish();
+
     }
 
 }
