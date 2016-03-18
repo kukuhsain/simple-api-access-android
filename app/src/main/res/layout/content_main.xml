@@ -14,11 +14,13 @@
     tools:showIn="@layout/activity_main">
 
     <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="email"/>
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="password"
@@ -28,6 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:onClick="goToNext"/>
+        android:onClick="checkAuth"/>
 
 </LinearLayout>

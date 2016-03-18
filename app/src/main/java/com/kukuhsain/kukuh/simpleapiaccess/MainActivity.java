@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -38,7 +40,25 @@ public class MainActivity extends AppCompatActivity {
         });*/
     }
 
-    public void goToNext(View view) {
+    public void checkAuth(View view) {
+        EditText email = (EditText) findViewById(R.id.email);
+        EditText password = (EditText) findViewById(R.id.password);
+
+        String stringEmail = email.getText().toString();
+        String stringPassword = password.getText().toString();
+
+        Log.d("email", stringEmail);
+        Log.d("password", stringPassword);
+
+        if (stringEmail.equals("e@qiscus.com") && stringPassword.equals("1234abcd")) {
+            Toast.makeText(MainActivity.this, "Please wait", Toast.LENGTH_LONG).show();
+            goToNext();
+        } else {
+            Toast.makeText(MainActivity.this, "Wrong email and/or password", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void goToNext() {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://qiscusinterview.herokuapp.com")
